@@ -32,7 +32,7 @@ const Login = () => {
         navigate("/profile");
       } else {
         // Handle error
-        console.error(data);
+        window.alert("Invalid email or password");
       }
     } catch (error) {
       console.error(error);
