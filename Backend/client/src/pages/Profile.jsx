@@ -21,7 +21,7 @@ function Profile() {
 
       // Fetch user
       const userResponse = await fetch(
-        "http://localhost:5001/api/users/current",
+        "https://contact-book-yx3x.onrender.com/api/users/current",
         {
           headers: {
             Authorization: `Bearer ${token}`,

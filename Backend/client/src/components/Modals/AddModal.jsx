@@ -24,14 +24,17 @@ const AddModal = ({ closeModal, onAddContact }) => {
     const token = localStorage.getItem("token");
 
     try {
-      const response = await fetch("http://localhost:5001/api/contacts", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
-        },
-        body: JSON.stringify({ name, email, phone }),
-      });
+      const response = await fetch(
+        "https://contact-book-yx3x.onrender.com/api/contacts",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+          body: JSON.stringify({ name, email, phone }),
+        }
+      );
 
       const data = await response.json();
       console.log(data);

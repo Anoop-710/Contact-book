@@ -5,13 +5,16 @@ const DeleteModal = ({ id, closeModal, onDeleteContact }) => {
     const token = localStorage.getItem("token");
 
     try {
-      const response = await fetch(`http://localhost:5001/api/contacts/${id}`, {
-        method: "DELETE",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
-        },
-      });
+      const response = await fetch(
+        `https://contact-book-yx3x.onrender.com/api/contacts/${id}`,
+        {
+          method: "DELETE",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
 
       const data = await response.json();
 

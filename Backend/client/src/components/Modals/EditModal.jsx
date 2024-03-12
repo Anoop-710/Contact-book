@@ -27,18 +27,21 @@ const EditModal = ({ id, name, email, phone, closeModal, onEditContact }) => {
     const token = localStorage.getItem("token");
 
     try {
-      const response = await fetch(`http://localhost:5001/api/contacts/${id}`, {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
-        },
-        body: JSON.stringify({
-          name: newName,
-          email: newEmail,
-          phone: newPhone,
-        }),
-      });
+      const response = await fetch(
+        `https://contact-book-yx3x.onrender.com/api/contacts/${id}`,
+        {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+          body: JSON.stringify({
+            name: newName,
+            email: newEmail,
+            phone: newPhone,
+          }),
+        }
+      );
 
       const data = await response.json();
       // console.log(data);

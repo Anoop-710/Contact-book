@@ -8,11 +8,14 @@ const ContactDetails = () => {
     const fetchContact = async () => {
       const token = localStorage.getItem("token");
 
-      const response = await fetch(`http://localhost:5001/api/contacts/${id}`, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
+      const response = await fetch(
+        `https://contact-book-yx3x.onrender.com/api/contacts/${id}`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
 
       const data = await response.json();
 
