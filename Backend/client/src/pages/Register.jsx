@@ -37,6 +37,9 @@ function Register() {
         onSubmit={handleSubmit}
         className="bg-white p-8 rounded-lg shadow-md"
       >
+        <h1 className="text-3xl font-bold mb-4 text-center text-gray-800">
+          Register
+        </h1>
         <div className="mb-4">
           <label className="block text-gray-700">Username</label>
           <input
@@ -76,10 +79,14 @@ function Register() {
         >
           Register
         </button>
-        <p className="mt-4 text-gray-700">Already have an account?</p>
-        <Link to="/login" className="text-blue-500 hover:underline">
-          Login
-        </Link>
+        <div className="mt-4 text-center">
+          Already have an account?
+          <p>
+            <Link to="/login" className="text-blue-500 hover:underline">
+              Login
+            </Link>
+          </p>
+        </div>
       </form>
     </div>
   );
