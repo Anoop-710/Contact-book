@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 function Register() {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  const navigate = useNavigate();
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -23,8 +24,11 @@ function Register() {
       }
     );
 
-    // const data = await response.json();
+    const data = await response.json();
     // console.log(data);
+    if (response.ok) {
+      navigate("/login");
+    }
   };
 
   return (
